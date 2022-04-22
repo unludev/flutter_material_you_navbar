@@ -57,29 +57,26 @@ class _MaterialYouState extends State<MaterialYou> {
             });
           },
           destinations: [
-            NavigationDestination(
-              selectedIcon: Icon(Icons.eco),
-              icon: Icon(Icons.eco_outlined),
-              label: 'eco',
-            ),
-            NavigationDestination(
-              selectedIcon: Icon(Icons.home),
-              icon: Icon(Icons.home_outlined),
-              label: 'home',
-            ),
-            NavigationDestination(
-              selectedIcon: Icon(Icons.person),
-              icon: Icon(Icons.person_outlined),
-              label: 'person',
-            ),
-            NavigationDestination(
-              selectedIcon: Icon(Icons.video_camera_back),
-              icon: Icon(Icons.video_camera_back_outlined),
-              label: 'video',
-            )
+            _navigationDestination(
+                Icon(Icons.eco), Icon(Icons.eco_outlined), 'eco'),
+            _navigationDestination(
+                Icon(Icons.home), Icon(Icons.home_outlined), 'home'),
+            _navigationDestination(
+                Icon(Icons.person), Icon(Icons.person_outlined), 'person'),
+            _navigationDestination(Icon(Icons.video_camera_back),
+                Icon(Icons.video_camera_back_outlined), 'video'),
           ],
         ),
       ),
+    );
+  }
+
+  NavigationDestination _navigationDestination(
+      Icon selectedIcon, Icon icon, String label) {
+    return NavigationDestination(
+      selectedIcon: selectedIcon,
+      icon: icon,
+      label: label,
     );
   }
 }
